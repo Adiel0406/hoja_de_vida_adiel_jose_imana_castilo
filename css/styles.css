@@ -1,0 +1,526 @@
+/* =========================================
+FUENTE Y CONFIGURACIÓN GENERAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Trebuchet MS", Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================================
+VARIABLES - MODO CLARO (POR DEFECTO)
+========================================= */
+
+:root {
+    --fondo: #f4f1ea;
+    --superficie: #ffffff;
+    --superficie-secundaria: #e8e2d6;
+    --texto: #222222;
+    --texto-secundario: #555555;
+    --principal: #6b4f35;
+    --principal-hover: #4e3927;
+    --borde: #c8bda9;
+    --marcado: #e5c76b;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.10);
+    --error: #d9534f;
+    --exito: #5cb85c;
+}
+
+/* =========================================
+VARIABLES - MODO OSCURO
+========================================= */
+
+body.modo-oscuro {
+    --fondo: #121212;
+    --superficie: #1e1e1e;
+    --superficie-secundaria: #292929;
+    --texto: #eeeeee;
+    --texto-secundario: #bbbbbb;
+    --principal: #d4a574;
+    --principal-hover: #e5bd91;
+    --borde: #444444;
+    --marcado: #806f22;
+    --sombra: 0 4px 15px rgba(0, 0, 0, 0.45);
+}
+
+.contenedor-pagina {
+    min-height: 100vh;
+    background-color: var(--fondo);
+    color: var(--texto);
+    padding: 25px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* =========================================
+BOTÓN MODO CLARO / OSCURO
+========================================= */
+
+.boton-modo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    padding: 10px 18px;
+    background-color: var(--principal);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: var(--sombra);
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.boton-modo:hover {
+    transform: scale(1.05);
+    background-color: var(--principal-hover);
+}
+
+/* =========================================
+ENLACE SALTAR CONTENIDO
+========================================= */
+
+.saltar-contenido {
+    position: absolute;
+    left: -9999px;
+}
+
+.saltar-contenido:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2000;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: var(--principal);
+    color: white;
+    border-radius: 5px;
+}
+
+/* =========================================
+HEADER
+========================================= */
+
+header {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: var(--sombra);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+header h1 {
+    margin-bottom: 5px;
+}
+
+.subtitulo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--principal);
+}
+
+/* =========================================
+IMAGEN DE PERFIL
+========================================= */
+
+.foto-perfil {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.foto-perfil img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--principal);
+    box-shadow: var(--sombra);
+}
+
+.foto-perfil figcaption {
+    margin-top: 10px;
+    font-weight: bold;
+    color: var(--texto-secundario);
+}
+
+/* =========================================
+NAVEGACIÓN (FLEXBOX)
+========================================= */
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto 25px;
+    background-color: var(--superficie-secundaria);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--sombra);
+}
+
+nav h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    flex: 0 1 auto;
+}
+
+nav a {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: var(--principal);
+    border-radius: 6px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+    background-color: var(--principal);
+    color: white;
+}
+
+/* =========================================
+MAIN Y SECCIONES
+========================================= */
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+section,
+main > aside {
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--sombra);
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* =========================================
+ARTÍCULOS
+========================================= */
+
+article {
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: var(--superficie-secundaria);
+    border-left: 5px solid var(--principal);
+    border-radius: 8px;
+}
+
+article:last-child {
+    margin-bottom: 0;
+}
+
+/* =========================================
+ENCABEZADOS
+========================================= */
+
+h1, h2, h3 {
+    color: var(--principal);
+}
+
+h1 { font-size: 2rem; }
+h2 {
+    font-size: 1.6rem;
+    border-bottom: 2px solid var(--principal);
+    padding-bottom: 8px;
+}
+h3 { font-size: 1.2rem; }
+
+/* =========================================
+TEXTO Y ENLACES
+========================================= */
+
+small { color: var(--texto-secundario); }
+
+mark {
+    background-color: var(--marcado);
+    color: var(--texto);
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+strong { font-weight: bold; }
+
+a { color: var(--principal); }
+a:hover, a:focus { color: var(--principal-hover); }
+
+/* =========================================
+PROYECTOS Y HABILIDADES (CSS GRID)
+========================================= */
+
+.proyectos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.proyectos-grid article { margin-bottom: 0; }
+
+.habilidades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.habilidades-grid article { margin-bottom: 0; }
+
+/* =========================================
+METER Y TABLAS
+========================================= */
+
+meter {
+    width: 120px;
+    height: 15px;
+}
+
+.tabla-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    min-width: 500px;
+}
+
+caption {
+    font-weight: bold;
+    color: var(--principal);
+    padding: 10px;
+}
+
+th, td {
+    border: 1px solid var(--borde);
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: var(--superficie-secundaria);
+    color: var(--principal);
+}
+
+/* =========================================
+MULTIMEDIA, DETAILS Y PROGRESS
+========================================= */
+
+#multimedia figure { margin: 0; }
+#multimedia figure img {
+    width: 300px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+}
+
+audio, video { max-width: 100%; }
+video { display: block; margin-top: 10px; }
+
+details { margin-top: 10px; }
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--principal);
+}
+
+progress {
+    width: 100%;
+    max-width: 400px;
+    height: 20px;
+}
+
+/* =========================================
+FORMULARIO Y VALIDACIÓN
+========================================= */
+
+fieldset {
+    border: 1px solid var(--borde);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+legend {
+    color: var(--principal);
+    font-weight: bold;
+    padding: 0 8px;
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+input, textarea, select {
+    font-family: inherit;
+    background-color: var(--superficie);
+    color: var(--texto);
+    border: 1px solid var(--borde);
+    border-radius: 5px;
+    padding: 9px;
+    max-width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    max-width: 600px;
+}
+
+textarea { resize: vertical; }
+
+input:focus, textarea:focus, select:focus {
+    outline: 3px solid var(--principal);
+    outline-offset: 2px;
+}
+
+/* Estilos para errores de validación JS */
+input.campo-error, textarea.campo-error, select.campo-error {
+    border-color: var(--error) !important;
+    background-color: rgba(217, 83, 79, 0.05);
+}
+
+.error-mensaje {
+    color: var(--error);
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 4px;
+    font-weight: bold;
+}
+
+.mensaje-respuesta {
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.mensaje-respuesta.exito {
+    background-color: rgba(92, 184, 92, 0.2);
+    color: var(--exito);
+    border: 1px solid var(--exito);
+}
+
+.checkbox-aceptacion {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.checkbox-aceptacion input { margin-top: 5px; }
+.checkbox-aceptacion label { margin: 0; }
+
+.botones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    font-family: inherit;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 18px;
+    background-color: var(--principal);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+button:hover, button:focus {
+    background-color: var(--principal-hover);
+    transform: translateY(-2px);
+}
+
+/* =========================================
+FOOTER
+========================================= */
+
+footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--superficie);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: var(--sombra);
+}
+
+/* =========================================
+RESPONSIVE DESIGN (MEDIA QUERIES)
+========================================= */
+
+@media (max-width: 800px) {
+    .proyectos-grid, .habilidades-grid {
+        grid-template-columns: 1fr;
+    }
+    nav ul {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+    nav a { width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .contenedor-pagina { padding: 12px; }
+    .boton-modo {
+        position: static;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    header { padding: 20px; }
+    header h1 { font-size: 1.6rem; }
+    .foto-perfil img { width: 140px; height: 140px; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    section, main > aside { padding: 18px; }
+    article { padding: 15px; }
+    table { font-size: 13px; }
+    .botones-formulario { flex-direction: column; }
+    button { width: 100%; }
+}
+
+@media (max-width: 400px) {
+    .contenedor-pagina { padding: 8px; }
+    header { padding: 15px; }
+    section, main > aside { padding: 14px; }
+    article { padding: 12px; }
+    .foto-perfil img { width: 120px; height: 120px; }
+}
