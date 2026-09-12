@@ -1,146 +1,52 @@
-# Hoja de Vida - Adiel Jose Imaña Castillo
+# 📄 Proyecto de CV Interactivo y Profesional
 
-## Información del estudiante
+¡Bienvenido al repositorio de mi Hoja de Vida interactiva! Este proyecto fue desarrollado como parte de la **Primera Evaluación Práctica Parcial** de la asignatura **Tecnologías Web I (SIS-214)** en la Universidad Católica Boliviana San Pablo (Gestión 2026).
 
-**Nombre:** Adiel Jose Imaña Castillo
+---
 
-**Carrera:** Ingeniería de Sistemas
+## 🚀 Enlaces del Proyecto
 
-**Universidad:** Universidad Católica Boliviana
+* 🌐 **Sitio Web Publicado (GitHub Pages):** [https://tu-usuario.github.io/nombre-repositorio](https://tu-usuario.github.io/nombre-repositorio)
+* 📁 **Repositorio en GitHub:** [https://github.com/tu-usuario/nombre-repositorio](https://github.com/tu-usuario/nombre-repositorio)
 
-**Ubicación:** La Paz, Bolivia
+> **Nota:** Reemplaza los enlaces anteriores por las URLs reales de tu repositorio y de GitHub Pages.
 
-## Descripción
+---
 
-Este proyecto consiste en una hoja de vida personal desarrollada
-utilizando HTML5 nativo.
+## 👨‍💻 Datos del Estudiante
 
-La página presenta información académica, habilidades técnicas,
-proyectos destacados, idiomas, formación adicional, contenido
-multimedia y un formulario de contacto.
+* **Nombre:** Adiel Jose Imaña Castillo
+* **Carrera:** Ingeniería de Sistemas (4.º Semestre)
+* **Institución:** Universidad Católica Boliviana "San Pablo" (Sede La Paz)
+* **Materia:** Tecnologías Web I (SIS-214)
+* **Docente:** Ing. M.Sc. Miguel Angel Pacheco Arteaga
 
-El objetivo principal del proyecto es demostrar el uso correcto
-de las etiquetas semánticas y los elementos nativos de HTML5.
+---
 
-## Tecnologías utilizadas
+## 🛠️ Tecnologías Utilizadas
 
-- HTML5
-- HTML5 Forms
-- HTML5 Multimedia
-- HTML5 Accessibility
+* **HTML5 Semántico:** Estructuración del contenido utilizando etiquetas semánticas (`<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<aside>`, `<footer>`, `<figure>`, `<meter>`, `<progress>`, etc.).
+* **CSS3 Moderno:** 
+  * Maquetación mediante **Flexbox** (menú de navegación) y **CSS Grid** (sección de habilidades y proyectos).
+  * Manejo de variables CSS (`:root`) para personalización de temas.
+  * Diseños responsivos adaptados a móviles, tabletas y computadoras mediante `@media queries`.
+* **JavaScript Nativo (ES6):** 
+  * Cambio dinámico entre **Modo Claro / Modo Oscuro** con persistencia en `localStorage`.
+  * Validación de datos en el cliente para el formulario de contacto con mensajes de error personalizados y feedback al usuario.
 
-No se utilizaron frameworks ni librerías externas.
+---
 
-No se utilizó JavaScript.
-
-## Principales etiquetas HTML5 utilizadas
-
-### Estructura semántica
-
-- `<header>`
-- `<nav>`
-- `<main>`
-- `<section>`
-- `<article>`
-- `<aside>`
-- `<footer>`
-
-### Texto
-
-- `<h1>`
-- `<h2>`
-- `<h3>`
-- `<p>`
-- `<strong>`
-- `<em>`
-- `<mark>`
-- `<small>`
-- `<time>`
-
-### Listas
-
-- `<ul>`
-- `<ol>`
-- `<li>`
-
-### Tablas
-
-- `<table>`
-- `<caption>`
-- `<thead>`
-- `<tbody>`
-- `<tr>`
-- `<th>`
-- `<td>`
-
-### Multimedia
-
-- `<figure>`
-- `<figcaption>`
-- `<picture>`
-- `<img>`
-- `<audio>`
-- `<video>`
-- `<track>`
-
-### Formularios
-
-- `<form>`
-- `<fieldset>`
-- `<legend>`
-- `<label>`
-- `<input>`
-- `<textarea>`
-- `<select>`
-- `<option>`
-- `<button>`
-
-### Elementos HTML5 adicionales
-
-- `<details>`
-- `<summary>`
-- `<progress>`
-- `<meter>`
-
-## Accesibilidad
-
-La página incorpora diferentes criterios básicos de accesibilidad:
-
-- Atributo `lang="es"` en el documento.
-- Texto alternativo mediante `alt` en las imágenes.
-- Enlace "Saltar al contenido principal".
-- Navegación interna mediante teclado.
-- Jerarquía correcta de encabezados.
-- Etiquetas `<label>` asociadas a los campos del formulario.
-- Atributos `aria-label` y `aria-describedby`.
-- Campos obligatorios mediante `required`.
-- Mensajes de ayuda para algunos campos.
-- Subtítulos mediante `<track>` en el video.
-
-## Validación HTML5
-
-El formulario utiliza validación nativa mediante:
-
-- `required`
-- `minlength`
-- `maxlength`
-- `pattern`
-- `placeholder`
-- `type="email"`
-- `type="tel"`
-
-## Estructura del proyecto
+## 📂 Estructura del Proyecto
 
 ```text
-hoja-vida/
-├── index.html
-├── assets/
-│   ├── images/
-│   │   ├── foto.jpg
-│   │   └── proyecto.jpg
-│   ├── audio/
-│   │   └── presentacion.mp3
-│   └── video/
-│       ├── proyecto.mp4
-│       └── subtitulos.vtt
-└── README.md
+proyecto-cv/
+├── index.html            # Archivo principal con marcado HTML5 semántico
+├── css/
+│   └── styles.css        # Hoja de estilos principal con Flexbox, Grid y Responsive
+├── js/
+│   └── script.js         # Lógica de interactividad (Modo oscuro y validación)
+├── assets/               # Recursos multimedia del proyecto
+│   ├── images/           # Fotografía de perfil y capturas de proyectos
+│   ├── audio/            # Presentación profesional en audio
+│   └── video/            # Demostración en video de proyecto
+└── README.md             # Documentación del repositorio
